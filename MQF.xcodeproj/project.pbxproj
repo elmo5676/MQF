@@ -13,6 +13,12 @@
 		6E28C6702092F47F0000E253 /* MQF.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E28C66E2092F47F0000E253 /* MQF.xcdatamodeld */; };
 		6E28C6722092F4810000E253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E28C6712092F4810000E253 /* Assets.xcassets */; };
 		6E28C6752092F4810000E253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E28C6732092F4810000E253 /* LaunchScreen.storyboard */; };
+		6E28C67D2092F4D30000E253 /* MQFQuestionsAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E28C67C2092F4D30000E253 /* MQFQuestionsAnswers.swift */; };
+		6E43620D20937B8800E8BDA1 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43620C20937B8800E8BDA1 /* DropDownButton.swift */; };
+		6E43620F2093911300E8BDA1 /* quizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43620E2093911300E8BDA1 /* quizViewController.swift */; };
+		6EAA7B382094275A00CDDF7E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7B372094275A00CDDF7E /* Extensions.swift */; };
+		6EAA7B3A2094464200CDDF7E /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA7B392094464200CDDF7E /* PdfViewController.swift */; };
+		6EAA7B3C209447A500CDDF7E /* 1T-38A-1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA7B3B209447A500CDDF7E /* 1T-38A-1.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		6E28C6712092F4810000E253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E28C6742092F4810000E253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E28C6762092F4810000E253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E28C67C2092F4D30000E253 /* MQFQuestionsAnswers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MQFQuestionsAnswers.swift; sourceTree = "<group>"; };
+		6E43620C20937B8800E8BDA1 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
+		6E43620E2093911300E8BDA1 /* quizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizViewController.swift; sourceTree = "<group>"; };
+		6EAA7B372094275A00CDDF7E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6EAA7B392094464200CDDF7E /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		6EAA7B3B209447A500CDDF7E /* 1T-38A-1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "1T-38A-1.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +71,15 @@
 				6E28C6672092F47F0000E253 /* AppDelegate.swift */,
 				6E28C6692092F47F0000E253 /* ViewController.swift */,
 				6E28C66B2092F47F0000E253 /* Main.storyboard */,
+				6EAA7B392094464200CDDF7E /* PdfViewController.swift */,
+				6E43620E2093911300E8BDA1 /* quizViewController.swift */,
+				6EAA7B372094275A00CDDF7E /* Extensions.swift */,
+				6E43620C20937B8800E8BDA1 /* DropDownButton.swift */,
 				6E28C6712092F4810000E253 /* Assets.xcassets */,
+				6EAA7B3B209447A500CDDF7E /* 1T-38A-1.pdf */,
 				6E28C6732092F4810000E253 /* LaunchScreen.storyboard */,
 				6E28C6762092F4810000E253 /* Info.plist */,
+				6E28C67C2092F4D30000E253 /* MQFQuestionsAnswers.swift */,
 				6E28C66E2092F47F0000E253 /* MQF.xcdatamodeld */,
 			);
 			path = MQF;
@@ -126,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E28C6752092F4810000E253 /* LaunchScreen.storyboard in Resources */,
+				6EAA7B3C209447A500CDDF7E /* 1T-38A-1.pdf in Resources */,
 				6E28C6722092F4810000E253 /* Assets.xcassets in Resources */,
 				6E28C66D2092F47F0000E253 /* Main.storyboard in Resources */,
 			);
@@ -140,7 +159,12 @@
 			files = (
 				6E28C6702092F47F0000E253 /* MQF.xcdatamodeld in Sources */,
 				6E28C66A2092F47F0000E253 /* ViewController.swift in Sources */,
+				6E43620D20937B8800E8BDA1 /* DropDownButton.swift in Sources */,
+				6EAA7B3A2094464200CDDF7E /* PdfViewController.swift in Sources */,
+				6E28C67D2092F4D30000E253 /* MQFQuestionsAnswers.swift in Sources */,
 				6E28C6682092F47F0000E253 /* AppDelegate.swift in Sources */,
+				6E43620F2093911300E8BDA1 /* quizViewController.swift in Sources */,
+				6EAA7B382094275A00CDDF7E /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,10 +307,11 @@
 		6E28C67A2092F4810000E253 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG653N5ES4;
 				INFOPLIST_FILE = MQF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,10 +326,11 @@
 		6E28C67B2092F4810000E253 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KG653N5ES4;
 				INFOPLIST_FILE = MQF/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
