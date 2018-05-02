@@ -20,8 +20,13 @@ class quizViewController: UIViewController {
         isVisable(answersDisplayed)
         previousQuestionButtonOutlet.alpha = 0.0
         markQuestionButtonOutlet.layer.cornerRadius = 3
-        clearMarkedQuestionsButtonOutlet.layer.cornerRadius = 3
+        clearQuestionButtonOutlet.layer.cornerRadius = 3
         questionCounter.text = String(questionNumberArray.count)
+        self.title = t38OrU2
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isToolbarHidden = false
     }
 
     //passed in
@@ -92,8 +97,8 @@ class quizViewController: UIViewController {
     
     @IBOutlet weak var questionCounter: UILabel!
     @IBOutlet weak var referenceButtonOutlet: UIButton!
-    @IBAction func referenceButton(_ sender: UIButton) {
-    }
+//    @IBAction func referenceButton(_ sender: UIButton) {
+//    }
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerButton_01_Outlet: UIButton!
     @IBOutlet weak var answerButton_02_Outlet: UIButton!
@@ -259,8 +264,6 @@ class quizViewController: UIViewController {
         } else if t38OrU2 == "U-2" {
             incorrectQuestionU2.append(questionNumberArray[currentQuestion])
         }
-        print(incorrectQuestionU2)
-        print(incorrectQuestionT38)
         userDefaultSet()
     }
 
@@ -327,23 +330,34 @@ class quizViewController: UIViewController {
     }
     
     @IBOutlet weak var markQuestionButtonOutlet: UIButton!
+    @IBOutlet weak var clearQuestionButtonOutlet: UIButton!
     @IBAction func markQuestionButton(_ sender: UIButton) {
         markQuestions()
-//        print(markedQuestionU2)
-//        print(markedQuestionT38)
     }
     
-    @IBOutlet weak var clearMarkedQuestionsButtonOutlet: UIButton!
-    @IBAction func clearMarkedQuestionsButton(_ sender: UIButton) {
-        markedQuestionT38.removeAll()
+    @IBAction func clearMarkedU2QuestionsButton(_ sender: UIBarButtonItem) {
         markedQuestionU2.removeAll()
+        userDefaultSet()
+    }
+    @IBAction func clearMarkedT38QuestionsButton(_ sender: UIBarButtonItem) {
+        markedQuestionT38.removeAll()
+        userDefaultSet()
+    }
+    @IBAction func clearIncorrectU2Button(_ sender: Any) {
+        incorrectQuestionU2.removeAll()
+        userDefaultSet()
+    }
+    @IBAction func clearIncorrectT38Button(_ sender: Any) {
+        incorrectQuestionT38.removeAll()
+        userDefaultSet()
+    }
+    @IBAction func clearAllButton(_ sender: UIButton) {
+        markedQuestionU2.removeAll()
+        markedQuestionT38.removeAll()
         incorrectQuestionU2.removeAll()
         incorrectQuestionT38.removeAll()
         userDefaultSet()
-//        print(markedQuestionU2)
-//        print(markedQuestionT38)
     }
-    
     
     
 

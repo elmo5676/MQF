@@ -14,8 +14,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         dropDownMenus()
         userDefaults()
-        numberOfQuestionsDD.isHidden = true
         
+        self.title = "MQF"
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        dropDownMenus()
+        userDefaults()
+        questionBankOption()
+        self.navigationController?.isToolbarHidden = true
+    }
+    
+    func questionBankOption() {
+        if (markedQuestionU2.count == 0 && t38OrU2 == "U-2") {
+            questionSetDD.isHidden = true
+        } else if (markedQuestionT38.count == 0 && t38OrU2 == "T-38") {
+            questionSetDD.isHidden = true
+        } else {
+            questionSetDD.isHidden = false
+        }
     }
     
     var numberOfQuestions = "All"
@@ -25,6 +41,22 @@ class ViewController: UIViewController {
     
     var markedQuestionT38 = [Int]()
     var markedQuestionU2 = [Int]()
+//    var incorrectQuestionsT38 = [Int]()
+//    var incorrectQuestionsU2 = [Int]()
+    
+    func mqfSelectionButtonChangeColor(){
+        if t38OrU2 == "T-38" {
+            t38ButtonOutlet.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            t38ButtonOutlet.layer.borderWidth = 3
+            u2ButtonOutlet.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            u2ButtonOutlet.layer.borderWidth = 0
+        } else if t38OrU2 == "U-2" {
+            t38ButtonOutlet.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            t38ButtonOutlet.layer.borderWidth = 0
+            u2ButtonOutlet.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            u2ButtonOutlet.layer.borderWidth = 3
+        }
+    }
     
     func userDefaults(){
         if let markedQuestionT38_ = UserDefaults.standard.object(forKey: "markedQuestionT38") {
@@ -33,6 +65,12 @@ class ViewController: UIViewController {
         if let markedQuestionU2_ = UserDefaults.standard.object(forKey: "markedQuestionU2") {
             markedQuestionU2 = markedQuestionU2_ as! [Int]
         }
+//        if let incorrectQuestionsT38_ = UserDefaults.standard.object(forKey: "incorrectQuestionT38") {
+//            incorrectQuestionsT38 = incorrectQuestionsT38_ as! [Int]
+//        }
+//        if let incorrectQuestionsU2_ = UserDefaults.standard.object(forKey: "incorrectQuestionU2") {
+//            incorrectQuestionsU2 = incorrectQuestionsU2_ as! [Int]
+//        }
     }
     
     func alertIfMarkedIsEmpty() {
@@ -55,18 +93,23 @@ class ViewController: UIViewController {
     
     
     
-    @IBOutlet weak var mqfLabel: UILabel!
+    
+    @IBOutlet weak var u2ButtonOutlet: UIButton!
+    @IBOutlet weak var t38ButtonOutlet: UIButton!
     
     @IBAction func wichMQFSelectedButton(_ sender: UIButton) {
         if let title = sender.titleLabel {
             if title.text == "T-38" {
                 t38OrU2 = "T-38"
-                mqfLabel.text = "T-38"
+                userDefaults()
+                questionBankOption()
             } else if title.text == "U-2" {
                 t38OrU2 = "U-2"
-                mqfLabel.text = "U-2"
+                userDefaults()
+                questionBankOption()
             }
         }
+        mqfSelectionButtonChangeColor()
     }
     
     
@@ -84,10 +127,14 @@ class ViewController: UIViewController {
             ({ self.answersDisplayed = false })
             ])
         
-        questionSetDD.initMenu(["Random","Marked","Incorrect"], actions: [
+//        questionSetDD.initMenu(["Random","Marked","Incorrect"], actions: [
+//            ({ self.questionSet = "Random"; self.numberOfQuestionsDD.isHidden = false }),
+//            ({ self.questionSet = "Marked"; self.numberOfQuestionsDD.isHidden = true }),
+//            ({ self.questionSet = "Incorrect"; self.numberOfQuestionsDD.isHidden = true })
+//            ])
+        questionSetDD.initMenu(["Random","Marked"], actions: [
             ({ self.questionSet = "Random"; self.numberOfQuestionsDD.isHidden = false }),
-            ({ self.questionSet = "Marked"; self.numberOfQuestionsDD.isHidden = true }),
-            ({ self.questionSet = "Incorrect"; self.numberOfQuestionsDD.isHidden = true })
+            ({ self.questionSet = "Marked"; self.numberOfQuestionsDD.isHidden = true })
             ])
     }
     
